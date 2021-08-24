@@ -1,16 +1,20 @@
 <!-- This is a static file -->
 <!-- served from your routes in server.js -->
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title>トップページ</title>
+    <title>はじめの一歩</title>
   </head>
-
   <body>
-    <h1>views/index.html を編集してみたぜYeah!</h1><!-- コメント -->
-    <div>
-      <img src="https://www.exa-corp.co.jp/apple-touch-icon.png" width="300" height="200"/>
-    </div>
+    <h1 id="result">ここに出力</h1> 
+    <script>
+      const hResult = document.getElementById('result');
+      const text01  = hResult.innerText;
+      alert(text01); // アラート表示
+      console.log(text01); // 標準出力
+      hResult.innerText = 'Hello World';
+    </script>
   </body>
 </html>
