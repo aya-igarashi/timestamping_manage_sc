@@ -16,7 +16,4 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
 
-app.get("/input", (request, response) => {
-  response.sendFile(__dirname + "/views/directusers.html");
-});
 
