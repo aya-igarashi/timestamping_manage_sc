@@ -1,19 +1,18 @@
-// server.js
-// where your node app starts
-
-// we've started you off with Express (https://expressjs.com/)
-// but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
 
 
-// make all the files in 'public' available
-// https://expressjs.com/en/starter/static-files.html
+const mongodb = require('mongodb');
+const MongoClient = mongodb.MongoClient;
+const mongouri = 'mongodb+srv://'+process.env.USER+':'+process.env.PASS+'@'+process.env.MONGOHOST;
+
 app.use(express.static("public"));
+
+
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/views/index.html");
+  response.sendFile(__dirname + "/src/pages/index.html");
 });
-
-
