@@ -21,11 +21,17 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
 
-//ページ遷移
+//directuserページへ遷移
 app.get("/input", (request, response) => {
   response.sendFile(__dirname + "/views/directuser.html");
 });
 
+//user_infoページへ遷移
 app.get("/input2", (request, response) => {
+  response.sendFile(__dirname + "/views/user_info.html");
+});
+
+//indexページへ遷移
+app.get("/input3", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
