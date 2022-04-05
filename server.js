@@ -35,3 +35,4 @@ app.get("/input2", (request, response) => {
 app.get("/input3", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
+
