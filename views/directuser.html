@@ -10,10 +10,23 @@
       <label for="name">ユーザー名</label>
       <input type="text" class="form-control" style="width:２００px;" id="user" placeholder="ユーザー名" >
       <input type="password" class="form-control" style="width:２００px;" id="password" placeholder="パスワード" >
-      <button id="save_user" onclick="saveQuestions()">ユーザー登録</button>
+      <button id="save_user" onclick="saveUser()">ユーザー登録</button>
       <button onclick="location.href='/input3'">戻る</button>
     </div>
     
+    <script>
+      function saveUser() {
+        const textBox1 = document.getElementById('user'); // テキストボックス
+        const user_name = textBox1.value; //テキストボックスに書かれた内容
+        const textBox2 = document.getElementById('paaword') //テキストボックス
+        const user_password = textBox2.value; //テキストボックスに書かれた内容
+        
+        const user_np = {name:user_name, password;userpasswprd}
+        
+      }
+      
+      
+    </script>
     
   </body>
 </html>
