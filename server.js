@@ -54,3 +54,24 @@ app.post('/save', function(req, res){
    });
   });
 });
+
+var mongodb = require('mongodb');
+var url = 'mongodb://localhost/user';
+var db  = mongoose.createConnection(url, function(err, res){
+    if(err){
+        console.log('Error connected: ' + url + ' - ' + err);
+    }else{
+        console.log('Success connected: ' + url);
+    }
+});
+
+const mongodb = require('mongodb');
+const MongoClient = mongodb.MongoClient;
+const mongouri = 'mongodb+srv://'+process.env.USER+':'+process.env.PASS+'@'+process.env.MONGOHOST;
+MongoClient.connect(mongouri, function(err, res) {
+   if(err){
+        console.log('Error connected: ' + url + ' - ' + err);
+    }else{
+        console.log('Success connected: ' + url);
+    }
+});
