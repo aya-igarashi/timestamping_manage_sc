@@ -22,7 +22,7 @@
       <!-- 日付入力 -->
       <label　>打刻時間の確認と編集<br></label>
       <input  type="date" id="search_day">
-      <button id="toserach">確認</button>
+      <button id="tosearch">確認</button>
     </div>
     <label style="margin-top:20px" for="exampleFormControlSelect2">検索結果</label>    
     <table id="resultTable" class="table">
@@ -56,7 +56,9 @@
       const req = new XMLHttpRequest(); // 通信用オブジェクト
       req.open('POST', url, true);
       req.setRequestHeader('Content-Type', 'application/json');
-      req.send(JSON.stringify({search_day: search_day}));
+      req.send(JSON.stringify({ymd: search_day}));
+      console.log(search_day);
+        
       req.onreadystatechange = function(){
       if(req.readyState == 4 && req.status == 200) {
         console.log(req.response);

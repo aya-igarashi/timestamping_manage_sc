@@ -36,6 +36,7 @@ app.get("/input3", (request, response) => {
   response.sendFile(__dirname + "/views/index.html");
 });
 
+//ユーザーの保存
 app.post('/save', function(req, res){
   let received = '';
   req.setEncoding('utf8');
@@ -54,3 +55,27 @@ app.post('/save', function(req, res){
    });
   });
 });
+
+
+//勤怠時刻の編集
+app.post('/find', function(req, res){
+    let received = '';
+  req.setEncoding('utf8');
+  req.on('data', function(chunk) {
+    received += chunk;
+  });
+   req.on('end', function() {
+    const search_day = JSON.parse(received).search_day;
+    MongoClient.connect(mongouri, function(error, client) {
+    const db = client.db(process.env.DB); // 対象 DB
+    const colTimes = db.collection('timemanagement'); // 対象コレクション
+      
+      colTimes.find(search_day).toArray(function(err, times) {
+        console.log(times);
+        res.json(times);
+        client.close();
+      });
+    });
+  });
+});
+
