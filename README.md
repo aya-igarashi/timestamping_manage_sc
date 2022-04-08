@@ -1,30 +1,31 @@
-# hello-express
+ユーザー側の仕様
 
-A server that serves a webpage, its resources, and some data
+・ユーザーログイン
+・日時と時刻のリアルタイム表示 
+・出勤、退勤、休憩、戻りの打刻 
+・月の残業時間の表示
+（・ログアウト）
 
+管理者側の仕様
 
-## Your Project
+・ユーザー情報編集
+・従業員の名前から打刻時間の確認と編集 
+・従業員ごとの就業時間、残業時間の確認確認（指定期間ごと）
+・残業アラート（一定の残業時間を超えた社員をアラートでお知らせ）
 
-On the front-end,
+データベースの仕様
 
-- Edit `views/index.html` to change the content of the webpage
-- `public/client.js` is the javacript that runs when you load the webpage
-- `public/style.css` is the styles for `views/index.html`
-- Drag in `assets`, like images or music, to add them to your project
+勤怠
+LユーザーID(ユーザー１のキーと紐づいているレコード)
+L日付
+L出勤時間
+L休憩時間
+L休憩戻り
+L退勤時間
 
-On the back-end,
-
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
-
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy.
-
-
-## Made by [Glitch](https://glitch.com/)
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-( ᵔ ᴥ ᵔ )
+ユーザーテーブル 
+カラム名 例 
+ユーザID test@aa.bb.cc 
+ユーザ名 テスト 
+パスワード 12345 
+登録日 2022/04/07 （更新日）
