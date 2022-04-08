@@ -2,14 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title>はじめの一歩</title>
+    <title>ユーザー情報ページ</title>
   </head>
   <body>
     <h1>ユーザー情報ページ</h1>
-    <label for="name">ユーザー名</label>
-    <input type="text" class="form-control" style="width:２００px;" id="user" placeholder="ユーザー名" >
-    <input type="text" class="form-control" style="width:２００px;" id="password" placeholder="パスワード" >
-    <button onclick="location.href='index.html'">ユーザー登録</button>
-    <button onclick="location.href='/input3'">戻る</button>
+    <div>
+      <label for="name">ユーザー名</label>
+      <input type="text" class="form-control" style="width:２００px;" id="user" placeholder="ユーザー名"><!-- データベースに入っている名前から部分一致検索ができるようにする -->
+    </div>
+    <div style="padding:20px;">
+      <!-- 日付入力 -->
+      <label　>打刻時間の確認と編集<br></label>
+      <input  type="date">
+      <button>確認</button>
+    </div>
+    
+    <div>
+      <p>就業時間の確認</p>
+      <!-- 日付入力 -->
+      <input  type="date">~<input  type="date">
+      <button>計算</button>
+    </div>
+    
+    <div style="padding:20px;">
+      <button onclick="location.href='/input3'" >戻る</button>
+    </div>
   </body>
+
+
 </html>

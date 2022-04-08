@@ -18,10 +18,10 @@
       function saveUser() {
         const textBox1 = document.getElementById('user'); // テキストボックス
         const user_name = textBox1.value; //テキストボックスに書かれた内容
-        const textBox2 = document.getElementById('paaword') //テキストボックス
+        const textBox2 = document.getElementById('password') //テキストボックス
         const user_password = textBox2.value; //テキストボックスに書かれた内容
         
-        const user_np = {name:user_name, password:userpasswprd};
+        const user_np = {name:user_name, password:user_password};
         
         const url = '/save'; // 通信先
        const req = new XMLHttpRequest(); // 通信用オブジェクト
