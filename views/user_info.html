@@ -56,7 +56,7 @@
       const req = new XMLHttpRequest(); // 通信用オブジェクト
       req.open('POST', url, true);
       req.setRequestHeader('Content-Type', 'application/json');
-      req.send(JSON.stringify({ymd: search_day}));
+      req.send(JSON.stringify({search_day: search_day}));
       console.log(search_day);
         
       req.onreadystatechange = function(){
