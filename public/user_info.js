@@ -20,10 +20,10 @@ document.getElementById("tosearch").onclick = function(){
            
         for(let i in results) {
           const tr = document.createElement('tr');
-          const td_theme = document.createElement('td');
-          td_theme.innerHTML = results[i].theme;
-          const td_question = document.createElement('td');
-          td_question.innerHTML = results[i].question; 
+          const td_type = document.createElement('td');
+          td_type.innerHTML = results[i].theme;
+          const td_time = document.createElement('td');
+          td_time.innerHTML = results[i].question; 
           const jbBtn = document.createElement( 'button' );
           const jbBtnText = document.createTextNode( '削除' );
           jbBtn.appendChild( jbBtnText );
@@ -31,8 +31,8 @@ document.getElementById("tosearch").onclick = function(){
           jbBtn.value = results[i]._id;
           jbBtn.setAttribute('onclick', 'remove("' + results[i]._id + '")');
         
-          tr.appendChild(td_theme);
-          tr.appendChild(td_question);
+          tr.appendChild(td_type);
+          tr.appendChild(td_time);
           tr.appendChild(jbBtn);
           tbody.appendChild(tr);
         }
