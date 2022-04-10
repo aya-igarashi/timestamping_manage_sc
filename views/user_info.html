@@ -35,8 +35,8 @@
     <table id="resultTable" class="table">
       <thead>
         <tr>
-          <th style="width:15%" scope="col">テーマ</th>
-          <th style="width:50%" scope="col">質問</th>
+          <th style="width:15%" scope="col">タイプ</th>
+          <th style="width:50%" scope="col">時間</th>
           <th style="width:5%" scope="col">削除</th>
           </tr>
       </thead>
@@ -47,8 +47,8 @@
     
     <script>
       function remove(del_id){
-      const del_questions = {id: del_id};
-      console.log(del_questions);
+      const del_times = {id: del_id};
+      console.log(del_times);
       const url = '/remove'; // 通信先
       const req = new XMLHttpRequest(); // 通信用オブジェクト
       req.onreadystatechange = function(){
@@ -58,7 +58,7 @@
       };
       req.open('POST', url, true);
       req.setRequestHeader('Content-Type', 'application/json');
-      req.send(JSON.stringify(del_questions)); // オブジェクトを文字列化して送信
+      req.send(JSON.stringify(del_times)); // オブジェクトを文字列化して送信
      };
       
       

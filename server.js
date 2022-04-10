@@ -81,3 +81,28 @@ app.post('/find', function(req, res){
   });
 });
 
+app.post('/remove', function(req, res){
+  let received = '';
+  req.setEncoding('utf8');
+  req.on('data', function(chunk) {
+    received += chunk;
+  });
+  req.on('end', function() {
+    const del_times = JSON.parse(received); // 保存対象
+
+    const oid = new mongodb.ObjectID(del_times.id);
+
+    const condition = {_id: {$eq: oid}};
+    console.log(condition);
+    MongoClient.connect(mongouri, function(error, client) {
+      const db = client.db(process.env.DB); // 対象 DB
+      const colTimes = db.collection('timemanagement'); // 対象コレクション
+
+      colTimes.deleteMany(condition, function(err, result) {
+        res.sendStatus(200); // HTTP ステータスコード返却
+        client.close(); // DB を閉じる
+        console.log(result);
+       });
+     });
+    });
+});
