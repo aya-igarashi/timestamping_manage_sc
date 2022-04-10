@@ -104,5 +104,5 @@ app.post('/remove', function(req, res){
         console.log(result);
        });
      });
-    });
+  });
 });
