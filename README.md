@@ -30,3 +30,4 @@ L退勤時間
 パスワード 12345 
 登録日 2022/04/07 （更新日）
 # timestamping_manage_sc
+# timestamping_manage_sc
