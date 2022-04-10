@@ -17,7 +17,7 @@
 
 勤怠
 LユーザーID(ユーザー１のキーと紐づいているレコード)
-L日付
+<br>L日付
 L出勤時間
 L休憩時間
 L休憩戻り
@@ -29,9 +29,3 @@ L退勤時間
 ユーザ名 テスト 
 パスワード 12345 
 登録日 2022/04/07 （更新日）
-# timestamping_manage_sc
-# timestamping_manage_sc
-# timestamping_manage_sc
-# timestamping_manage_sc
-# timestamping_manage_sc
-# timestamping_manage_sc
