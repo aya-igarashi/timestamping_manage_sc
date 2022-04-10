@@ -65,12 +65,12 @@ app.post('/find', function(req, res){
     received += chunk;
   });
    req.on('end', function() {
-    const day = JSON.parse(received).search_day;
+    const search_day = JSON.parse(received);
     MongoClient.connect(mongouri, function(error, client) {
     const db = client.db(process.env.DB); // 対象 DB
     const colTimes = db.collection('timemanagement'); // 対象コレクション
-    console.log(day)  
-    const condition = {ymd:day};
+    console.log(search_day)  
+    const condition = {ymd:search_day};
           
       colTimes.find(condition).toArray(function(err, times) {
         console.log(times);
