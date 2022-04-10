@@ -35,16 +35,14 @@
       document.getElementById("tosearch").onclick = function(){
 
       const search_day = document.getElementById("search_day").value;
-      const tbody = document.getElementById('tbody'); 
   
-      while(tbody.firstChild) tbody.removeChild(tbody.firstChild);
 
   
       const url = '/find'; // 通信先
       const req = new XMLHttpRequest(); // 通信用オブジェクト
       req.open('POST', url, true);
       req.setRequestHeader('Content-Type', 'application/json');
-      req.send(JSON.stringify({search_day: search_day}));
+      req.send(JSON.stringify(search_day));
       console.log(search_day);
         
       req.onreadystatechange = function(){
@@ -56,20 +54,6 @@
     };
 
       
-      function remove(del_id){
-      const del_user = {id: del_id};
-      console.log(del_user);
-      const url = '/remove'; // 通信先
-      const req = new XMLHttpRequest(); // 通信用オブジェクト
-      req.onreadystatechange = function(){
-      if(req.readyState == 4 && req.status == 200) {
-        alert('成功'); // 成功したらアラート表示
-       }
-      };
-      req.open('POST', url, true);
-      req.setRequestHeader('Content-Type', 'application/json');
-      req.send(JSON.stringify(del_user)); // オブジェクトを文字列化して送信
-     };
       
     </script>
     

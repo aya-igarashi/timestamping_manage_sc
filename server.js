@@ -70,8 +70,9 @@ app.post('/find', function(req, res){
     const db = client.db(process.env.DB); // 対象 DB
     const colTimes = db.collection('timemanagement'); // 対象コレクション
     console.log(day)  
-      
-      colTimes.find(day).toArray(function(err, times) {
+    const condition = {ymd:day};
+          
+      colTimes.find(condition).toArray(function(err, times) {
         console.log(times);
         res.json(times);
         client.close();
