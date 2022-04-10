@@ -20,6 +20,8 @@ document.getElementById("tosearch").onclick = function(){
           
         for(let i in results) {
           const tr = document.createElement('tr');
+          const td_member = document.createElement('td');
+          td_member.innerHTML = results[i].user_id;
           const td_type = document.createElement('td');
           td_type.innerHTML = results[i].type;
           const td_ymd = document.createElement('td');
@@ -33,6 +35,7 @@ document.getElementById("tosearch").onclick = function(){
           jbBtn.value = results[i]._id;
           jbBtn.setAttribute('onclick', 'remove("' + results[i]._id + '")');
         
+          tr.appendChild(td_member);
           tr.appendChild(td_type);
           tr.appendChild(td_ymd);
           tr.appendChild(td_time);
