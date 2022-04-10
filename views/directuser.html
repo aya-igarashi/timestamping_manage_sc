@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8"/>
     <title>打刻アプリ管理者画面</title>
+    <script src="/log-in.js" defer></script>
   </head>
+  
   <body>
     <h1>ユーザー編集ページ</h1>
     <div>
@@ -15,6 +17,7 @@
     </div>
     
     <script>
+      
       function saveUser() {
         const textBox1 = document.getElementById('user'); // テキストボックス
         const user_name = textBox1.value; //テキストボックスに書かれた内容
@@ -24,19 +27,18 @@
         const user_np = {name:user_name, password:user_password};
         
         const url = '/save'; // 通信先
-       const req = new XMLHttpRequest(); // 通信用オブジェクト
-       req.onreadystatechange = function(){
-       if(req.readyState == 4 && req.status == 200) {
-        alert('成功'); // 成功したらアラート表示
-       }
-      };
-      req.open('POST', url, true);
-      req.setRequestHeader('Content-Type', 'application/json');
-      req.send(JSON.stringify(user_np)); // オブジェクトを文字列化して送信
-     };
+         const req = new XMLHttpRequest(); // 通信用オブジェクト
+         req.onreadystatechange = function(){
+         if(req.readyState == 4 && req.status == 200) {
+          alert('成功'); // 成功したらアラート表示
+         }
+        };
+        req.open('POST', url, true);
+        req.setRequestHeader('Content-Type', 'application/json');
+        req.send(JSON.stringify(user_np)); // オブジェクトを文字列化して送信
+       };
 
-      
-      
+            
     </script>
     
   </body>
